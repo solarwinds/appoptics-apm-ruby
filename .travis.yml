@@ -63,11 +63,10 @@ install:
   - sudo sh ./install_appneta.sh f51e2a43-0ee5-4851-8a54-825773b3218e
   - sudo apt-get install -y tracelytics-java-agent
   - curl -LO http://kent.dl.sourceforge.net/project/swig/swig/swig-3.0.8/swig-3.0.8.tar.gz
-  - tar xzC /tmp
-  - pushd /tmp/swig-3.0.8
+  - tar xzf swig-3.0.8.tar.gz
+  - pushd swig-3.0.8
   - ./configure && make && sudo make install
   - popd
-  - rm -rf /tmp/swig-3.0.8
 
 before_script:
   - sudo cp -f ./test/settings /var/lib/tracelyzer/
