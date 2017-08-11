@@ -73,9 +73,9 @@ task :fetch_ext_deps do
       local_file = File.join(ext_src_dir, filename)
     end
     puts "fetching #{remote_file} to #{local_file}"
-    open(remote_file) do |rf|
+    open(remote_file, 'rb') do |rf|
       content = rf.read
-      File.open(local_file, 'w') {|f| f.puts content}
+      File.open(local_file, 'wb') {|f| f.puts content}
     end
   end
   FileUtils.cd(ext_src_dir) do
