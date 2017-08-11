@@ -55,7 +55,7 @@ before_install:
   - gem --version
   - sudo sh -c "echo 'JVM_OPTS=\"\${JVM_OPTS} -Djava.net.preferIPv4Stack=false\"' >> /etc/cassandra/cassandra-env.sh"
   - echo "127.0.0.1 localhost"  | sudo tee /etc/hosts
-  - echo "127.0.0.1 " `hostname` | sudo tee /etc/hosts
+  - echo "127.0.0.1 " `hostname` | sudo tee -a /etc/hosts
   - sudo service cassandra start
 
 install:
