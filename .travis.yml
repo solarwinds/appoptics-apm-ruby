@@ -78,7 +78,7 @@ before_script:
   - mysql -e 'create database travis_ci_test;'
   - sleep 10
 
-script: "bundle exec rake test"
+script: "N=1 bundle exec rake test"
 
 services:
   - mongodb
