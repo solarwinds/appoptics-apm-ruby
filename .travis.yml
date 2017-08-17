@@ -54,8 +54,6 @@ before_install:
   - gem update bundler
   - gem --version
   - sudo service cassandra stop
-  - sudo rm -rf /var/lib/cassandra/*
-  - wget http://www.us.apache.org/dist/cassandra/2.2.10/apache-cassandra-2.2.10-bin.tar.gz && tar -xvzf apache-cassandra-2.2.10-bin.tar.gz && sudo sh apache-cassandra-2.2.10/bin/cassandra
   - sudo sh -c "echo 'JVM_OPTS=\"\${JVM_OPTS} -Djava.net.preferIPv4Stack=false\"' >> /etc/cassandra/cassandra-env.sh"
   - echo "127.0.0.1 localhost"  | sudo tee /etc/hosts
   - echo "127.0.0.1 " `hostname` | sudo tee -a /etc/hosts
