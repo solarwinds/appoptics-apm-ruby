@@ -43,12 +43,12 @@ Rake::TestTask.new do |t|
     t.test_files = FileList['test/support/*_test.rb'] +
                    FileList['test/reporter/*_test.rb'] +
                    FileList['test/instrumentation/*_test.rb'] +
-                   FileList['test/profiling/*_test.rb']
-
+                   FileList['test/profiling/*_test.rb'] -
+                   ['test/instrumentation/twitter-cassandra_test.rb']
       # exclude cassandra tests for now
       # TODO: they need refactoring to use the 'cassandra-driver' gem
       # instead of the 'cassandra' gem, which hasn't had a commit since 09/2014
-    t.test_files -= ['test/instrumentation/twitter-cassandra_test.rb']
+    t.test_files.exclude('test/instrumentation/twitter-cassandra_test.rb')
   end
 
   if defined?(JRUBY_VERSION)
