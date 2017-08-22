@@ -2,6 +2,7 @@
 # All rights reserved.
 
 require 'minitest_helper'
+require 'moped'
 
 unless ENV['TV_MONGO_SERVER']
   ENV['TV_MONGO_SERVER'] = "127.0.0.1:27017"
@@ -378,7 +379,7 @@ if RUBY_VERSION >= '1.9.3'
     it 'should trace 3 types of find and modify calls' do
       TraceView::API.start_trace('moped_test', '', {}) do
         @users.find(:likes => 1).modify({ "$set" => { :name => "Tool" }}, :upsert => true)
-        @users.find.modify({:query => { "$inc" => { :likes => 1 }}}, :new => true)
+        @users.find.modify({ "$inc" => { :likes => 1 }}, :new => true)
         @users.find.modify({:query => {}}, :remove => true)
       end
 
