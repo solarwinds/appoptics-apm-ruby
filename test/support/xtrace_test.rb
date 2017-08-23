@@ -32,7 +32,7 @@ describe "XTrace" do
     task_id.must_equal "F86B3D3342FCECAECE33C6411379BB171505DB6A"
     task_id.length.must_equal 40
 
-    task_id = TraceView::XTrace.task_id("1B77970F82332EE22FF04C249FCBA8F63E8AFA2C6730E209453259B2D6")
+    task_id = TraceView::XTrace.task_id("2B77970F82332EE22FF04C249FCBA8F63E8AFA2C6730E209453259B2D601")
     task_id.is_a?(String).must_equal true
     task_id.must_equal "77970F82332EE22FF04C249FCBA8F63E8AFA2C67"
     task_id.length.must_equal 40
