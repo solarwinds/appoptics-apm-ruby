@@ -2,7 +2,6 @@
 # All rights reserved.
 
 require 'minitest_helper'
-require 'moped'
 
 unless ENV['TV_MONGO_SERVER']
   ENV['TV_MONGO_SERVER'] = "127.0.0.1:27017"
