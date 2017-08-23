@@ -407,7 +407,7 @@ if RUBY_VERSION >= '1.9.3'
       traces[7]['Update_Document'].must_equal "all"
       traces[7]['Collection'].must_equal "users"
       traces[7]['Options'].must_equal "{\"new\":true}"
-      traces[7]['Change'].must_equal "{\"query\":{\"$inc\":{\"likes\":1}}}"
+      traces[7]['Change'].must_equal "{\"$inc\":{\"likes\":1}}"
       traces[7].has_key?('Backtrace').must_equal TraceView::Config[:moped][:collect_backtraces]
       validate_event_keys(traces[8], @exit_kvs)
 
