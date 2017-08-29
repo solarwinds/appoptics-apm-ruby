@@ -59,7 +59,6 @@ else
 end
 
 gem 'cassandra'
-gem 'curb', '<= 9.3' unless defined?(JRUBY_VERSION)
 gem 'dalli' if RUBY_VERSION > '1.8.7'
 gem 'excon'
 gem 'faraday'
@@ -87,6 +86,7 @@ else
   else
     gem 'pg'
   end
+  gem 'curb', '< 9.4'
 end
 
 unless defined?(JRUBY_VERSION)
