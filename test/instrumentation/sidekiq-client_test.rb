@@ -30,7 +30,7 @@ if RUBY_VERSION >= '2.0' && !defined?(JRUBY_VERSION)
       else
         assert_equal 2, redis_traces.count
       end
-      assert_equal 21, traces.count
+      assert_equal 21, traces.count - redis_traces.count
     end
 
     def test_enqueue
