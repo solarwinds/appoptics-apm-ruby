@@ -122,7 +122,7 @@ module TraceView
     end
   end
 
-  class Event
+  module EventUtil
     def self.metadataString(evt)
       evt.metadataString
     end
@@ -175,12 +175,9 @@ module TraceView
       when :always
         TraceView::Context.setTracingMode(OBOE_TRACE_ALWAYS)
 
-      when :through
-        TraceView::Context.setTracingMode(OBOE_TRACE_THROUGH)
-
       else
         TraceView.logger.fatal "[oboe/error] Invalid tracing mode set: #{mode}"
-        TraceView::Context.setTracingMode(OBOE_TRACE_THROUGH)
+        TraceView::Context.setTracingMode(OBOE_TRACE_NEVER)
       end
     end
 
