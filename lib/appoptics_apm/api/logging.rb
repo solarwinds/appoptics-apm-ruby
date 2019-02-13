@@ -194,7 +194,7 @@ module AppOpticsAPM
         log_event(layer, :exit, event, opts)
       ensure
         # FIXME has_incoming_context commented out, it has importance for JRuby only but breaks Ruby tests
-        AppOpticsAPM::Context.clear # unless AppOpticsAPM.has_incoming_context?
+        AppOpticsAPM::Context.try(:clear) # unless AppOpticsAPM.has_incoming_context?
         AppOpticsAPM.transaction_name = nil
       end
 
