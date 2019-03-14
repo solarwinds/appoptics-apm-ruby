@@ -44,7 +44,7 @@ module AppOpticsAPM
       ensure
         return kvs
       end
-      
+
       ##
       # profile_curb_method
       #
@@ -97,7 +97,7 @@ module AppOpticsAPM
           AppOpticsAPM::API.log_exit(:curb, kvs)
         end
       end
-      
+
     end # CurlUtility
 
     # Instrumentation specific to ::Curl::Easy
@@ -290,7 +290,7 @@ module AppOpticsAPM
       def perform_with_appoptics(&block)
         # If we're not tracing or we're already tracing curb, just do a fast return.
         if !AppOpticsAPM.tracing? || [:curb, :curb_multi].include?(AppOpticsAPM.layer)
-          self.requests.each do |request|
+          self.requests.each do |_, request|
             unless AppOpticsAPM::API.blacklisted?(URI(request.url).hostname)
               request.headers['X-Trace'] = AppOpticsAPM::Context.toString if AppOpticsAPM::Context.isValid
             end
@@ -304,7 +304,7 @@ module AppOpticsAPM
 
           AppOpticsAPM::API.log_entry(:curb_multi, kvs)
 
-          self.requests.each do |request|
+          self.requests.each do |_, request|
             unless AppOpticsAPM::API.blacklisted?(URI(request.url).hostname)
               request.headers['X-Trace'] = AppOpticsAPM::Context.toString if AppOpticsAPM::Context.isValid
             end
