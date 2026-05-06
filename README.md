@@ -1,5 +1,8 @@
 # Welcome to the SolarWindsAPM Ruby Gem
 
+> [!CAUTION]
+> AppOptics has reached end of service life. This codebase is no longer maintained, please migrate to [SolarWinds Observability](https://www.solarwinds.com/solarwinds-observability) and [SolarWinds APM Ruby](https://github.com/solarwinds/apm-ruby).
+
 The solarwinds_apm gem provides [SolarWindsAPM](https://cloud.solarwinds.com/) performance instrumentation for Ruby.
 
 It has the ability to report performance metrics on an array of libraries, databases and frameworks such as Rails,
