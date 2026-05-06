@@ -1,5 +1,8 @@
 # Welcome to the AppOpticsAPM Ruby Gem
 
+> [!CAUTION]
+> AppOptics has reached end of service life. This codebase is no longer maintained, please migrate to [SolarWinds Observability](https://www.solarwinds.com/solarwinds-observability) and [SolarWinds APM Ruby](https://github.com/solarwinds/apm-ruby).
+
 The appoptics_apm gem provides [AppOptics APM](https://www.appoptics.com/) performance instrumentation for Ruby.
 
 ![Ruby AppOpticsAPM](https://docs.appoptics.com/_images/ruby_trace_smaller.png)
